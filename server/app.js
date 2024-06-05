@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+//const cors = require('cors');
 const profileRoutes = require('./routes/profile_routes');
 const { connectDB } = require('./config/db');
 
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 5001;
 connectDB();
 
 app.use(express.json());
+//app.use(cors());
 
 app.use('/api/profile' , profileRoutes);
 app.listen(PORT , () => {
